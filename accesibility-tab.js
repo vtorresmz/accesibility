@@ -1,8 +1,8 @@
 /* Accesibility JS tab
+version: 1.0
 este software esta creado para facilitar las tareas 
 de los auditores y personas que auditan sitios web.
 esta es una versión básica de libre uso, que solo debes pegar en la consola del navegador y utilizar.
-version: 0.1
 con esto podrás indentificar el orden de navegación mediante teclado.
 */
 
