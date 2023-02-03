@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Accesibilidad</title>
+    <link href="css/accesibility.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.speechkit.io/v2/speechkit.js"></script>
+</head>
+
+
+<body>
+    <main class="container">
+        <h1 class="h1-accesibility-demo">Resaltar enlace</h1>
+
+        <h6 class="fw-bold text-uppercase text-primary mb-0">
+            Hablemos
+        </h6>
+
+        <!-- Text -->
+        <a href="https://api.whatsapp.com/send?phone=56961591932" class="fs-sm text-gray-700 mb-0">
+        Si necesitas ayuda con tu sitio, puedo ayudarte.
+    </a>
+
+
+    </main>
+    <script>
+        // Crear una function que resalte los enlaces
+        function resaltarEnlaces() {
+            var enlaces = document.querySelectorAll("a");
+            enlaces.forEach(function(enlace) {
+                enlace.style.outline = "dotted blue";
+            });
+        }
+
+        // Crear un botón para habilitar el resaltado
+        var btnHabilitar = document.createElement("BUTTON");
+        var tHabilitar = document.createTextNode("Habilitar resaltado");
+        btnHabilitar.appendChild(tHabilitar);
+        document.body.appendChild(btnHabilitar);
+        btnHabilitar.addEventListener("click", resaltarEnlaces);
+
+        // Crear un botón para deshabilitar el resaltado
+        var btnDeshabilitar = document.createElement("BUTTON");
+        var tDeshabilitar = document.createTextNode("Deshabilitar resaltado");
+        btnDeshabilitar.appendChild(tDeshabilitar);
+        document.body.appendChild(btnDeshabilitar);
+        btnDeshabilitar.addEventListener("click", function() {
+            var enlaces = document.querySelectorAll("a");
+            enlaces.forEach(function(enlace) {
+                enlace.style.outline = "";
+            });
+        });
+    </script>
+
+</body>
+
+</html>

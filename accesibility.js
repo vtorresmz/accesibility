@@ -7,6 +7,7 @@ todo aquello que no cumpla con la  básica de accesbilidad a nivel semantico.
 */
 
 
+
 //funcion que contaviliza la cantidad de elementos del sitio.
 function getHtmlTagCounts() {
     const h1Tags = document.getElementsByTagName('h1').length;

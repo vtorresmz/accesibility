@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Accesibilidad</title>
+    <link href="css/accesibility.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+    <main class="container">
+        <h1 class="h1-accesibility-demo">Navegame con tab</h1>
+
+        <h6 class="fw-bold text-uppercase text-primary mb-0">
+            Hablemos
+        </h6>
+
+        <!-- Text -->
+        <a href="https://api.whatsapp.com/send?phone=56961591932" class="fs-sm text-gray-700 mb-0">
+        Si necesitas ayuda con tu sitio, puedo ayudarte.
+    </a>
+
+    </main>
+    <script>
+        function navegacionTeclado() {
+            // Obtener todos los elementos navegables
+            var elementosNavegables = document.querySelectorAll("a, button, input, select, textarea, section, header, nav, li, p, footer, article, h1, h2, h3, h4, h5, h6");
+
+            // Asignar tabindex a cada elemento
+            elementosNavegables.forEach(function(elemento) {
+                elemento.setAttribute("tabindex", "0");
+            });
+
+            // Agregar evento keydown al documento
+            document.addEventListener("keydown", function(event) {
+                // Obtener el elemento actualmente enfocado
+                var elementoEnfocado = document.activeElement;
+
+                // Manejar navegación con las teclas de flecha
+                if (event.key === "ArrowDown") {
+                    var siguienteElemento = elementoEnfocado.nextElementSibling;
+                    if (siguienteElemento) {
+                        siguienteElemento.focus();
+                        siguienteElemento.style.outline = "dotted";
+                        elementoEnfocado.style.outline = "none";
+                    }
+                } else if (event.key === "ArrowUp") {
+                    var anteriorElemento = elementoEnfocado.previousElementSibling;
+                    if (anteriorElemento) {
+                        anteriorElemento.focus();
+                        anteriorElemento.style.outline = "dotted";
+                        elementoEnfocado.style.outline = "none";
+                    }
+                }
+            });
+            //Agregar boton para deshabilitar la navegación por teclado
+            var btn = document.createElement("BUTTON");
+            var t = document.createTextNode("Deshabilitar navegación");
+            btn.appendChild(t);
+            document.body.appendChild(btn);
+            btn.addEventListener("click", function() {
+                //Remover el evento keydown del documento
+                document.removeEventListener("keydown", navegacionTeclado);
+                //Remover el boton de deshabilitar navegación
+                btn.remove();
+            });
+        }
+        navegacionTeclado();
+    </script>
+
+</body>
+
+</html>

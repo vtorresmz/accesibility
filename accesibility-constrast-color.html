@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Accesibilidad</title>
+    <link href="css/accesibility.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+    <main class="container">
+        <h1 class="h1-accesibility-demo">Cambiame de color</h1>
+
+        <h6 class="fw-bold text-uppercase text-primary mb-0">
+            Hablemos
+        </h6>
+
+        <!-- Text -->
+        <a href="https://api.whatsapp.com/send?phone=56961591932" class="fs-sm text-gray-700 mb-0">
+        Si necesitas ayuda con tu sitio, puedo ayudarte.
+    </a>
+        <button onclick="changeColorScheme('high-contrast')">High Contrast</button>
+        <button onclick="changeColorScheme('daltonism-1')">Daltonism 1</button>
+        <button onclick="changeColorScheme('daltonism-2')">Daltonism 2</button>
+        <button onclick="changeColorScheme('daltonism-3')">Daltonism 3</button>
+
+
+    </main>
+    <script>
+        /* Accesibility JS: regulador de contraste*/
+        function changeColorScheme(scheme) {
+            var elements = document.getElementsByTagName("*");
+            switch (scheme) {
+                case "high-contrast":
+                    document.body.style.backgroundColor = "black";
+                    for (var i = 0; i < elements.length; i++) {
+                        elements[i].style.color = "white";
+                    }
+                    break;
+                case "daltonism-1":
+                    document.body.style.backgroundColor = "white";
+                    for (var i = 0; i < elements.length; i++) {
+                        elements[i].style.color = "#004d99";
+                    }
+                    break;
+                case "daltonism-2":
+                    document.body.style.backgroundColor = "white";
+                    for (var i = 0; i < elements.length; i++) {
+                        elements[i].style.color = "#009933";
+                    }
+                    break;
+                case "daltonism-3":
+                    document.body.style.backgroundColor = "white";
+                    for (var i = 0; i < elements.length; i++) {
+                        elements[i].style.color = "#ff0000";
+                    }
+                    break;
+                case "daltonism-4":
+                    document.body.style.backgroundColor = "white";
+                    for (var i = 0; i < elements.length; i++) {
+                        elements[i].style.color = "#ff9900";
+                    }
+                    break;
+                case "daltonism-5":
+                    document.body.style.backgroundColor = "white";
+                    for (var i = 0; i < elements.length; i++) {
+                        elements[i].style.color = "#00cc99";
+                    }
+                    break;
+                default:
+                    document.body.style.backgroundColor = "white";
+                    for (var i = 0; i < elements.length; i++) {
+                        elements[i].style.color = "black";
+                    }
+            }
+        }
+
+        changeColorScheme();
+    </script>
+</body>
+
+</html>
